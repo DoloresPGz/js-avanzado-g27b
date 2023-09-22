@@ -17,6 +17,8 @@ const ordenPizzas = [
 ]
 
 
+/*
+//Promise all con promesas 
 Promise.all(ordenPizzas)
 .then(
     pizzas => {
@@ -25,6 +27,18 @@ Promise.all(ordenPizzas)
 )
 .catch(
     err => console.log(err)
-)
+)*/
+
+//Promise all con async await
+async function mandarOrdenPizzas() {
+    try{
+        const pizzasPreparadas = await Promise.all(ordenPizzas) //espera a que se ejecute el proceso asíncrono
+        pizzasPreparadas.forEach(pizza => console.log(pizza))
+    }catch(error){
+        console.error(error)
+    }
+}
+
+mandarOrdenPizzas()
 
     
