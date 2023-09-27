@@ -15,14 +15,17 @@ function searchCountries(country){
                 countryCard.classList.add('country-card')
                 const currencies = Object.keys(country.currencies) //[EUR]
                 const name_currencies = currencies.map(key => country.currencies[key].name).join()
-                const languages = Object.values(country.languages).join("")
+                const languages = Object.values(country.languages) //arreglo
+                const list_languages = languages.map(language => `<p>${language}</p>`).join('')
+                
 
                 countryCard.innerHTML = `
                     <h2>${country.name.common}</h2>
                     <h3>${country.name.official}</h3>
                     <p>Capital(s): ${country.capital.toString()}</p>
                     <p>Curricies: ${name_currencies}</p>
-                    <p>Languages: ${languages}</p>
+                    <p>Languages:</p>
+                    ${list_languages}
                     <img src='${country.flags.png}' height=130px width=200px />
                 `
 
