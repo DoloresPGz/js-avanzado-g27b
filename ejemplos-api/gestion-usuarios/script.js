@@ -2,7 +2,7 @@ const nameInput = document.getElementById("name")
 const emailInput = document.getElementById("email")
 const userList = document.getElementById("user-list")
 const crudForm = document.getElementById("crud-form")
-const apiKey = "5b1b451539c04b4cbf1f3a334491c7dc" //AQUÍ VA TU API KEY
+const apiKey = "" //AQUÍ VA TU API KEY
 const apiURL = `https://crudcrud.com/api/${apiKey}/users`
 
 function loadUsers() {
