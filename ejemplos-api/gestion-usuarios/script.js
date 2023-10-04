@@ -14,6 +14,6 @@ function loadUsers() {
 }
 
 
-document.activeElement("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function(){
     loadUsers()
 })
