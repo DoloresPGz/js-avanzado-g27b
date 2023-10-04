@@ -22,6 +22,31 @@ function loadUsers() {
     })
 }
 
+//Alta de usuarios
+crudForm.addEventListener('submit', function (event) {
+    event.preventDefault()
+
+    const newUser = {
+        name: nameInput.value,
+        email: emailInput.value
+    }
+    
+    
+    fetch(apiURL,{
+        method:'POST',
+        body:JSON.stringify(//Convierto mi información en formato JSON para enviarlo al servidor
+         newUser
+        ),
+        headers:{
+            'Content-Type' :'application/json'
+        }
+    }).then(() => {
+        nameInput.value = ''
+        emailInput.value = ''
+        loadUsers()
+    })
+})
+
 
 document.addEventListener("DOMContentLoaded", function(){
     loadUsers()
